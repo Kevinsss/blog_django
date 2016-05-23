@@ -1,0 +1,263 @@
+<!Doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name=viewport>
+    <meta name="format-detection" content="telephone=no">
+    <meta name=referrer content=always>
+    <title>JerryQu 的小站</title>
+    <script>!function (a, b) {
+        function c(a) {
+            return b.getElementById(a)
+        }
+
+        function d() {
+            g("nls", 1, 1)
+        }
+
+        function e(a) {
+            var c = "";
+            try {
+                c = l[a] || "", c.length < 99 && (b.documentElement.style.display = "none", j(), location.reload())
+            } catch (d) {
+                j()
+            }
+            return c
+        }
+
+        function f(a, b) {
+            try {
+                l[a] = b, b !== l[a] && j()
+            } catch (c) {
+                j()
+            }
+        }
+
+        function g(a, c) {
+            var d = 999;
+            c || (d = -1), d = new Date(+new Date + 864e5 * d).toGMTString();
+            var e = a + "=" + c + "; path=/; expires=" + d;
+            b.cookie = e
+        }
+
+        function h(a, b) {
+            var d = c(b).innerHTML;
+            f(a, d)
+        }
+
+        function i(a) {
+            var c = a.split(":"), d = e(c[0]), f = b.createElement("1" == c[1] ? "script" : "style");
+            f.innerHTML = d, b.head.appendChild(f)
+        }
+
+        function j() {
+            g("v", 0)
+        }
+
+        var l, k = function () {
+        }, n = a.L = {h2l: k, l2h: k, c: k};
+        try {
+            l = localStorage, n.h2l = h, n.l2h = i, n.c = g
+        } catch (o) {
+            d()
+        }
+    }(this, document)</script>
+    <link rel="apple-touch-icon" href="//imququ.com/static/img/blog/favicon.png">
+    <script>L.l2h("all_css:2")</script>
+    <link rel=alternate type="application/rss+xml" title="RSS 2.0" href="//imququ.com/rss.html">
+    <meta name=description content="屈屈，专职前端开发，目前在中国北京。这个博客是我随便记录东西的地方。最新文章：像素化你的代码">
+</head>
+<body>
+<div class=container>
+    <div class="left-col">
+        <div class="intrude-less">
+            <header id=header class=inner>
+                <div class=profilepic><a href="/"></a></div>
+                <h1><a href="/">Jerry Qu</a></h1>
+
+                <p class=subtitle>专注 WEB 端开发</p>
+                <nav id="main-nav">
+                    <ul>
+                        <li class=on><a href="/"><span>首页</span></a>
+                        <li><a href="/series.html"><span>专题</span></a>
+                        <li><a href="/archives.html"><span>归档</span></a>
+                        <li><a href="/tags.html"><span>标签</span></a>
+                        <li><a href="/post/about.html"><span>关于</span></a>
+                    </ul>
+                </nav>
+                <nav id="sub-nav">
+                    <div class=social><a target=_blank class="twitter external" rel=nofollow href="//twitter.com/qgy18"
+                                         title=Twitter>Twitter</a> <a class=search href="/search.html" title=Search>Search</a>
+                        <a target=_blank class=rss href="//imququ.com/rss.html" title=RSS>RSS</a></div>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="mid-col">
+        <div class="mid-col-container">
+            <div id=content class=inner>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Sep 19, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/code2png-encoder.html#comments">5 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/code2png-encoder.html">像素化你的代码</a></h1>
+
+                    <div class="entry-content">本文正式开始前，先跟大家玩一个小游戏吧：点击代码下方的「在新窗口运行以上代码」按钮，找找 md5
+                        函数的定义在哪里。（使用阅读器的同学请猛击此处围观）[...]</p><p><a href="/post/code2png-encoder.html" class="more-link">继续阅读 &raquo;</a>
+                        </p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Sep 16, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/summary-of-my-blog-optimization.html#comments">17 Comments</a>
+                        </div>
+                    </div>
+                    <h1 class=title><a href="/post/summary-of-my-blog-optimization.html">本博客零散优化点汇总</a></h1>
+
+                    <div class="entry-content">熟悉本博客的同学可能早就发现，imququ.com 一直是我的一块试验田。我对网络协议、Web
+                        Server（Nginx）、服务端代码、前端代码每一层的研究和优化，最终都会在本博客体现出来。我见过很多大谈用户体验的博主，自己博客体验并不怎样。我并不想在写如何做好优化性能的同时，自己的博客却十分缓慢。关于具体的优化方案，我之前写过一些文章，如
+                        Nginx 配置之性能篇、HTTP/2 相关优化，以后还会继续写。例如我最近在研究 ECC 证书对 HTTPS
+                        性能的提升，等有结论了一定会跟大家分享。但同时有很多优化点我觉得比较常规，不值得分别写一篇文章去介绍。我准备把这些零散优化点罗列在本文，并不进行深入讨论。有兴趣进一步了解和探讨的同学，欢迎发表评论。[...]</p>
+                        <p><a href="/post/summary-of-my-blog-optimization.html" class="more-link">继续阅读 &raquo;</a></p>
+                    </div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Sep 12, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/datauri-and-404.html#comments">5 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/datauri-and-404.html">诡异问题排查之「DataURI 引发的血案」</a></h1>
+
+                    <div class="entry-content">今天在整理资料时，无意中看到一年前做过的一个名为《移动 Web
+                        诡异问题两则》的小分享。这两个问题源自于实际线上业务，都挺有意思，我准备以博客的形式分享给大家。由于文中的案例发生在一年前，当时的现象和测试数据不一定适用于当前环境，但排查问题的思路可以通用。这篇文章不会涉及任何具体的业务信息。我们有一个移动
+                        Web 项目，某天启用了内部编译工具中几个优化功能，发布上线后，马上收到了 404 请求报警邮件。这种情况之前从没遇见过，因为我们的静态资源要么托管在 CDN 上，要么 inline
+                        在页面中，正常情况下并不会从我们的 Web 机器读取。[...]</p><p><a href="/post/datauri-and-404.html" class="more-link">继续阅读 &raquo;</a>
+                        </p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Sep 10, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/http-client-hints.html#comments">3 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/http-client-hints.html">HTTP Client Hints 介绍</a></h1>
+
+                    <div class="entry-content">最近几年各种 Web 技术一直在爆炸式发展，每天都有大量新东西涌现出来。针对这个现象，业内两位大佬最近先后发文表达了自己的观点：Stop
+                        pushing the web forward、Is the web platform getting too big?。其实很早之前我就意识到以我目前的精力，吃透所有 Web
+                        新技术几乎是不可能完成的任务，我关注新技术的侧重点放在了性能优化上。今天我要向大家介绍的技术是：HTTP Client Hints，也与性能优化有关。利用这项技术，HTTP
+                        客户端（通常可以认为是浏览器）能够主动将一些特性告诉服务端，以便服务端更有针对性地输出内容。这项技术由我们熟知的 Ilya Grigorik
+                        提出，目前还处在较为早期的阶段，较为正式的描述文档可以在这里找到。目前 Chrome 46 (beta) 已支持它，IE 和 Firefox 则还在考虑中。[...]</p><p><a
+                                href="/post/http-client-hints.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Sep 03, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/about-miitbeian.html#comments">22 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/about-miitbeian.html">关于本站备案那点事</a></h1>
+
+                    <div class="entry-content">算了算我写博客快有十年了吧。一开始是在 csdn
+                        写，大约九年前，我开始使用自己编写的博客程序，启用自己的域名变为独立博主了。这些年来，我的博客程序从 ASP 到 Python 到现在的 NodeJS 写了三版，域名从 qgy18.com
+                        变为 imququ.com，部署环境也从一开始的国内 ASP 空间到后来的 Linode，唯一没变化的是我的博客从来没有备案过。但是最近，我的 Linode Tokyo
+                        持续无法访问，几番折腾之后终于下定决心使用国内云主机。既然无法改变现状，何不试试现在流行的「拥抱变化」呢。但选择国内主机，根据国家有关规定，我就必须去完成备案。[...]</p><p><a
+                                href="/post/about-miitbeian.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Aug 31, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/http2-resource.html#comments">10 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/http2-resource.html">HTTP/2 资料汇总</a></h1>
+
+                    <div class="entry-content">随着今年 5 月 14 日 HTTP/2 协议正式版的发布，越来越多的网站开始部署 HTTP/2 了。我对 HTTP
+                        协议一直都比较有兴趣，本文汇总一些关于 HTTP/2 的资料以及我写过的文章，会持续更新。如果大家有任何问题，欢迎留言交流探讨。[...]</p><p><a
+                                href="/post/http2-resource.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Aug 23, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/vagrantup.html#comments">5 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/vagrantup.html">开始使用 Vagrant</a></h1>
+
+                    <div class="entry-content">600 多天前，我写了《打造 Mac 下的完美开发环境》这篇文章，核心理念是利用虚拟化软件安装
+                        Linux，达到统一线下线上环境、屏蔽升级宿主机器带来的影响、方便地备份和恢复等几个目的。后来，我从那篇文章的评论中发现了
+                        Vagrant（官网、github），它跟我的想法几乎完全一致，并且提供了一系列工具用于开发环境的快速部署和迁移，非常好用。本文就来介绍 Vagrant 这个工具。[...]</p><p><a
+                                href="/post/vagrantup.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Aug 17, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/intro-to-bugtags.html#comments">5 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/intro-to-bugtags.html">Bugtags, 让移动应用测试变得更轻松</a></h1>
+
+                    <div class="entry-content">
+                        经常关注我博客的同学可能会发现，我的博客文章从来没有涉及到我所负责的项目、内部工作流程或配套工具。因为项目中遇到的很多问题和对应的解决方案都是基于一定条件所产生，并不具有普适性。内部的工作流程和配套工具也是一样，对于非开源的内部工具或系统来说，无论我把它写得多么天花乱坠，对于我的读者来说价值都是零。[...]</p>
+                        <p><a href="/post/intro-to-bugtags.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Aug 16, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/nginx-http2-patch.html#comments">43 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/nginx-http2-patch.html">Nginx 开始支持 HTTP/2 了</a></h1>
+
+                    <div class="entry-content">在我之前的「开始使用 HTTP/2」这篇文章里，我提到过：Nginx 到年底才会支持 HTTP/2，于是本博客使用 H2O 这个 Web
+                        Server 提供 HTTP/2 服务。8 月初，Nginx 官方博客发了一篇文章：「Announcing an Early Alpha Patch for HTTP/2」，也就是说
+                        Nginx 终于开始对 HTTP/2 提供早期（Early Alpha）支持了。对于我这种以折腾为主的个人博客来说，没有理由不尝试一下。[...]</p><p><a
+                                href="/post/nginx-http2-patch.html" class="more-link">继续阅读 &raquo;</a></p></div>
+                </article>
+                <article class=post>
+                    <div class=meta>
+                        <div class=date>
+                            <time>Jun 16, 2015</time>
+                        </div>
+                        <div class=comment><a href="/post/server-push-in-http2.html#comments">3 Comments</a></div>
+                    </div>
+                    <h1 class=title><a href="/post/server-push-in-http2.html">HTTP/2 中的 Server Push 讨论</a></h1>
+
+                    <div class="entry-content">本文不讨论 Server Push 是什么，也不讨论如何使用 Server Push。之前我在《开始使用
+                        HTTP/2》这篇文章中写到：如果服务端想要推送的资源本地已经缓存过，客户端会发送 RST_STREAM 告诉服务端不要再传了。不过根据我的观察，H2O 服务端在收到 RST_STREAM
+                        之前，已经发出了资源，造成了流量的浪费。具体原因，我正在向 H2O 作者求证。我给 H2O 项目提了一个 issues 询问此事，得到了 H2O 的作者 Kazuho Oku，aria2
+                        的作者 Tatsuhiro Tsujikawa，以及《High-Performance Browser Networking》的作者 Ilya Grigorik
+                        的回答。基本搞明白了这个问题，本文记录一下。[...]</p><p><a href="/post/server-push-in-http2.html" class="more-link">继续阅读 &raquo;</a>
+                        </p></div>
+                </article>
+                <nav id=pagenavi><a href="?pn=2" class=next>下一页 &raquo;</a>
+
+                    <div class=center><a href="/archives.html">博客归档</a></div>
+                </nav>
+            </div>
+        </div>
+        <footer id=footer class=inner>&copy; 2015 - JerryQu 的小站 - <a href="//imququ.com">ImQuQu.com</a> - <a
+                target=_blank rel="nofollow designer" class="external beian" href="http://www.miitbeian.gov.cn/">京ICP备15046275号-1<br>
+            Powered by <a target=_blank href="http://thinkjs.org">ThinkJS</a> &nbsp;&amp; <a target=_blank
+                                                                                             rel="nofollow designer"
+                                                                                             class=external
+                                                                                             href="//github.com/shashankmehta/greyshade">GreyShade</a>
+        </footer>
+    </div>
+</div>
+<input type=hidden id=CURRENT_PAGE value="blog-home">
+<script>L.l2h("all_js:1")</script>
+</body>
+</html>

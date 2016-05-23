@@ -1,0 +1,73 @@
+<!--home.html-->
+{% extends "base.html" %}
+{% block content %}
+    {#<div class="posts">#}
+    {#    {% for post in post_list %}#}
+    {#        <section class="post">#}
+    {#            <header class="post-header">#}
+    {#                <h2 class="post-title"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>#}
+    {##}
+    {#                    <p class="post-meta">#}
+    {#                        Time:  <a class="post-author" href="#">{{ post.date_time |date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>#}
+    {#                    </p>#}
+    {#            </header>#}
+    {##}
+    {#                <div class="post-description">#}
+    {#                    <p>#}
+    {#                        {{ post.content | custom_markdown | truncatechars_html:100}}#}
+    {#                    </p>#}
+    {#                </div>#}
+    {#                <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>#}
+    {#        </section>#}
+    {#    {% endfor %}#}
+    {##}
+    {#    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}#}
+    {#      <div>#}
+    {#      <ul class="pager">#}
+    {#      {% if post_list.has_previous %}#}
+    {#        <li><a href="?page={{ post_list.previous_page_number }}">上一页</a></li>#}
+    {#      {% endif %}#}
+    {##}
+    {#      {% if post_list.has_next %}#}
+    {#        <li><a href="?page={{ post_list.next_page_number }}">下一页</a></li>#}
+    {#      {% endif %}#}
+    {#      </ul>#}
+    {#      </div>#}
+    {#    {% endif %}#}
+    {#</div><!-- /.blog-post -->#}
+    {% for post in post_list %}
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+            <div class="meta">
+                <div class="date">
+                    <time datetime="2015-09-24T20:51:55+08:00" data-updated="true"
+                          itemprop="datePublished">{{ post.date_time | date:"Y-m-d" }}</time>
+                </div>
+                <div class="tags">
+                    <a href="{% url "search_tag" tag=post.category %}" itemprop="url">{{ post.category }}</a>
+                </div>
+            </div>
+            <h1 class="title" itemprop="name">
+                <a href="{% url "detail" id=post.id %}" itemprop="url">{{ post.title }}</a>
+            </h1>
+
+            <div class="entry-content" itemprop="articleBody">
+                {{ post.content | safe | truncatechars_html:100 }}
+
+                <a class="more-link" href="{% url "detail" id=post.id %}">阅读全文 »</a>
+
+            </div>
+        </article>
+    {% endfor %}
+
+    <nav id="pagenavi">
+        {% if post_list.has_previous %}
+            <a href="/page/{{ post_list.previous_page_number }}" class="prev">上一页</a>
+        {% endif %}
+        {% if post_list.has_next %}
+            <a href="/page/{{ post_list.next_page_number }}" class="next">下一页</a>
+        {% endif %}
+        <div class="center"><a href="{{ root_url }}/archives">博客归档</a></div>
+    </nav>
+
+{% endblock %}

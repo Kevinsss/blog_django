@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load set_var %}
+{% block content %}
+    {% set this_year = "0000" %}
+    {% for post in post_list %}
+        {% set yearm = post.date_time %}
+        {% ifnotequal yearm|date:"Y-m" this_year|date:"Y-m" %}
+            {% set this_year = post.date_time %}
+            {% if not forloop.first %}
+                </setion>
+            {% endif %}
+            <section class="archives"><h1 class="year">{{ post.date_time | date:"Y-m" }}</h1>
+        {% endifnotequal %}
+
+        <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="meta">
+                <span class="date">
+                    <time datetime="2020-08-15T14:02:04+08:00" itemprop="datePublished">
+                        {{ post.date_time |date:"Y-m-d" }}
+                    </time>
+                </span>
+                <br>
+		        <span class="tags">
+	                <a class='category' href='{% url "search_tag" tag=post.category %}'>{{ post.category }}</a>
+                </span>
+            </div>
+            <h1 class="midtitle" itemprop="name"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a>
+            </h1>
+        </article>
+        {#        </section>#}
+    {% endfor %}
+{% endblock %}

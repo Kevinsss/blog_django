@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+          <h1 class="title" itemprop="name">
+                标签云
+            </h1>
+        <div id="tagscloud" itemprop="articleBody">
+            <ul>
+                {% for tag in tag_list %}
+                    <li>
+                        <a style="font-size: {% widthratio 4 1 tag.category_num|add:5 %}px;"
+                           href="{% url "search_tag" tag=tag.category %}">
+                            {{ tag.category }} ({{ tag.category_num }})
+                        </a>
+                    </li>
+                    {#                    {{ tag.category }}#}
+                    {#                    {{ tag.category_num }}#}
+                {% endfor %}
+            </ul>
+        </div>
+
+
+    </article>
+
+
+    {##}
+    {##}
+    {#            <section class="post">#}
+    {#                <header class="post-header">#}
+    {#                    <h2 class="post-title"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>#}
+    {##}
+    {#                    <p class="post-meta">#}
+    {#                        Time: <a class="post-author" href="#">{{ post.date_time |date:"Y M d" }}</a> <a#}
+    {#                            class="post-category post-category-js"#}
+    {#                            href="{% url "search_tag" tag=post.category %}">{{ post.category|title }}</a>#}
+    {#                    </p>#}
+    {#                </header>#}
+    {##}
+    {#                <div class="post-description">#}
+    {#                    <p>#}
+    {#                        {{ post.content }}#}
+    {#                    </p>#}
+    {#                </div>#}
+    {#                <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>#}
+    {#            </section>#}
+    {#        {% endfor %}#}
+    {#    </div><!-- /.blog-post -->#}
+{% endblock %}

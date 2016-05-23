@@ -1,0 +1,190 @@
+<!doctype html>
+{% load staticfiles %}
+{% load gravatar %}
+<html lang="en">
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">#}
+{##}
+{#    <title>{% block title %} Kevin Sun Blog {% endblock %}</title>#}
+{#    <link rel="stylesheet" href="{% static "css/monokai.css" %}">#}
+{#    <link rel="stylesheet" href="{% static "css/pure-min.css" %}">#}
+{#    <link rel="stylesheet" href="{% static "css/grids-responsive-min.css" %}">#}
+{#    <link rel="stylesheet" href="{% static "css/blog.css" %}">#}
+{#    <link rel="stylesheet" href="{% static "css/screen.css" %}">#}
+{#    <link rel="stylesheet" href="{% static "css/font-awesome.min.css.css" %}">#}
+{#    <script type="text/javascript" src="{% static "../media/tinymce/tinymce.min.js" %}"></script>#}
+{#    <script type="text/javascript" src="{% static "../media/tinymce/textareas.js" %}"></script>#}
+{##}
+{##}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">#}
+{#    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>#}
+{##}
+{##}
+{#</head>#}
+<head>
+    <meta charset="utf-8">
+    <title>Kevin Sun's Blog</title>
+    <meta name="author" content="Kevin Sun">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/atom.xml" rel="alternate" title="Kevin Sun's Blog" type="application/atom+xml">
+    <link rel="canonical" href="http://kevinsss.github.io/">
+    <link href="{% static "img/favicon.png" %}" rel="shortcut icon">
+    <link rel="stylesheet" href="{% static "css/monokai.css" %}">
+    <link href="{% static "css/screen.css" %}" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="{% static "css/font-awesome.min.css" %}" media="screen, projection" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    {#    <link href="http://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" type="text/css">#}
+{#    <link href="http://fonts.useso.com/css?family=Nunito:400,300,700" rel="stylesheet" type="text/css">#}
+    <script src="http://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'syntaxhighlighter/scripts/shCore.js' %}"></script>
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushJScript.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushBash.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushPhp.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushJava.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushSql.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushXml.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushPython.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushCss.js' %}"></script>#}
+    {#    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shBrushCpp.js' %}"></script>#}
+    <script class="javascript" src="{% static 'syntaxhighlighter/scripts/shAutoloader.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SyntaxHighlighter.autoloader(
+                    ['js', 'jscript', 'javascript', '{% static 'syntaxhighlighter/scripts/shBrushjScript.js' %}'],
+                    ['bash', 'shell', '{% static 'syntaxhighlighter/scripts/shBrushBash.js' %}'],
+                    ['css', '{% static 'syntaxhighlighter/scripts/shBrushCss.js' %}'],
+                    ['xml', 'html', '{% static 'syntaxhighlighter/scripts/shBrushXml.js' %}'],
+                    ['sql', '{% static 'syntaxhighlighter/scripts/shBrushSql.js' %}'],
+                    ['php', '{% static 'syntaxhighlighter/scripts/shBrushPhp.js' %}'],
+                    ['java', '{% static 'syntaxhighlighter/scripts/shBrushJava.js' %}'],
+                    ['python', '{% static 'syntaxhighlighter/scripts/shBrushPython.js' %}'],
+                    ['scala', '{% static 'syntaxhighlighter/scripts/shBrushScala.js' %}']
+            );
+            SyntaxHighlighter.all();
+        })
+    </script>
+
+    <link href="{% static "syntaxhighlighter/styles/shCore.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "syntaxhighlighter/styles/shCoreDefault.css" %}" rel="stylesheet" type="text/css"/>
+
+
+</head>
+
+<body>
+<div class="container">
+    <div class="left-col">
+        <div class="intrude-less">
+            <header id="header" class="inner">
+                <div class="profilepic">
+                    <img alt="Profile Picture" src="{% static "img/tx.png" %}" style="width: 160px;"/>
+                    <script src="{% static "js/md5.js" %}"></script>
+                </div>
+                <h1><a href="/">Kevin Sun</a></h1>
+
+                WEB developer
+
+                <nav id="main-nav">
+                    <ul class="main">
+                        <li><a href="{{ root_url }}/">首页</a></li>
+                        <li><a href="{{ root_url }}/archives">文章列表</a></li>
+                        <li><a href="{{ root_url }}/tags">标签</a></li>
+                        <li><a href="{{ root_url }}/about">关于</a></li>
+                    </ul>
+                </nav>
+
+                <nav id="sub-nav">
+                    <div class="social">
+                        <a class="twitter" href="http://twitter.com/Kevin674078303" title="Twitter">Twitter</a>
+                        <a class="github" href="https://github.com/Kevinsss" title="GitHub">GitHub</a>
+                        <a class="rss" href="http://kevinsss.io/rss" title="RSS">RSS</a>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <div class="mid-col">
+        <div class="mid-col-container">
+
+            <div id="content" class="inner">
+                <div itemscope itemtype="http://schema.org/Blog">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </div>
+</div>
+
+
+{##}
+{#<div id="layout" class="pure-g">#}
+{#    <div class="sidebar pure-u-1 pure-u-md-1-4">#}
+{#        <div class="header">#}
+{#            <h1 class="brand-title"><a href="{% url "home" %}">Kevin Sun Blog</a></h1>#}
+{##}
+{#            <h2 class="brand-tagline">...WEB开发...</h2>#}
+{##}
+{#            <nav class="nav">#}
+{#                <ul class="nav-list">#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-success pure-button" href="/">主页</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-success pure-button" href="{% url "archives" %}">归档</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="pure-button" href="https://github.com/Andrew-liu/my_blog_tutorial">Github</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-error pure-button" href="http://weibo.com/u/2269678913">Weibo</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-success pure-button" href="">专题</a>#}
+{#                    </li>#}
+{##}
+{#                    <li>#}
+{#                        <form class="pure-form" action="/search/" method="get">#}
+{#                            <input class="pure-input-3-3" type="text" name="s" placeholder="search">#}
+{#                        </form>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-success pure-button" href="{% url "about_me" %}">About Me</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="button-success pure-button" href="{% url "RSS" %}">RSS</a>#}
+{#                    </li>#}
+{##}
+{#                </ul>#}
+{#            </nav>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <div class="content pure-u-1 pure-u-md-3-4">#}
+{#        <div>#}
+{#            {% block content %}#}
+{#            {% endblock %}#}
+{#            <div class="footer">#}
+{#                <div class="pure-menu pure-menu-horizontal pure-menu-open">#}
+{#                    <ul>>#}
+{#                        <li><a href="http://andrewliu.tk/about/">About Me</a></li>#}
+{#                        <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>#}
+{#                        <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load markdown %}
+
+
+{% block content %}
+{##}
+{#        <div class="posts">#}
+{#            <section class="post">#}
+{#                <header class="post-header">#}
+{#                    <h2 class="post-title">{{ post.title }}</h2>#}
+{##}
+{#                    <p class="post-meta">#}
+{#                        Time: <a class="post-author" href="#">{{ post.date_time|date:"Y /m /d" }}</a> <a#}
+{#                            class="post-category post-category-js"#}
+{#                            href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>#}
+{#                    </p>#}
+{#                </header>#}
+{##}
+{#                <div class="post-description">#}
+{#                    <p>#}
+{#                        {{ post.content | safe}}#}
+{#                    </p>#}
+{#                </div>#}
+{#            </section>#}
+{#            {% include "duoshuo.html" %}#}
+{#        </div><!-- /.blog-post -->#}
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <div class="meta">
+            <div class="date">
+                <time datetime="2015-09-24T20:51:55+08:00" data-updated="true"
+                      itemprop="datePublished">{{ post.date_time | date:"Y-m-d" }}</time>
+            </div>
+            <div class="tags">
+                <a href="{% url "search_tag" tag=post.category %}" itemprop="url">{{ post.category }}</a>
+            </div>
+        </div>
+        <h1 class="title" itemprop="name">
+            <a href="{% url "detail" id=post.id %}" itemprop="url">{{ post.title }}</a>
+        </h1>
+
+        <div class="entry-content" itemprop="articleBody">
+            {{ post.content | safe }}
+        </div>
+    </article>
+    <section id="comment">
+        {% include "duoshuo.html" %}
+    </section>
+
+{% endblock %}
